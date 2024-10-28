@@ -1,0 +1,143 @@
+n = int(input())
+m1 = []
+m2 = []
+final = []
+
+def soma(recebe, n1, n2, n):
+    global m1, m2
+    matriz_soma = []
+
+    if n1 == 'm1':
+        n1 = m1
+    else:
+        n1 = m2
+    if n2 == 'm1':
+        n2 = m1
+    else:
+        n2 = m2
+
+    for i in range(n):
+        matriz_soma.append([])
+        for j in range(n):
+            soma = n1[i][j] + n2[i][j]
+            matriz_soma[i].append(soma)
+
+    if recebe == 'm1':
+        m1 = matriz_soma
+        return m1
+    else:
+        m2 = matriz_soma
+        return m2
+
+def sub(recebe, n1, n2, n):
+    global m1, m2
+    matriz_sub = []
+
+    if n1 == 'm1':
+        n1 = m1
+    else:
+        n1 = m2
+    if n2 == 'm1':
+        n2 = m1
+    else:
+        n2 = m2
+
+    for i in range(n):
+        matriz_sub.append([])
+        for j in range(n):
+            sub = n1[i][j] - n2[i][j]
+            matriz_sub[i].append(sub)
+
+    if recebe == 'm1':
+        m1 = matriz_sub
+        return m1
+    else:
+        m2 = matriz_sub
+        return m2
+
+def produto(recebe, n1, n2, n):
+    global m1, m2
+    matriz_prod = [[0] * n for i in range(n)]
+
+    if n1 == 'm1':
+        n1 = m1
+    else:
+        n1 = m2
+    if n2 == 'm1':
+        n2 = m1
+    else:
+        n2 = m2
+
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                matriz_prod[i][j] += n1[i][k] * n2[k][j]
+
+    if recebe == 'm1':
+        m1 = matriz_prod
+        return m1
+    else:
+        m2 = matriz_prod
+        return m2
+
+def escalar(recebe, n1, n2, n):
+    global m1, m2
+    matriz_escalar = []
+
+    if n1 == 'm1':
+        n1 = m1
+        n2 = int(n2)
+    elif n1 == 'm2':
+        n1 = m2
+        n2 = int(n2)
+    else:
+        if n2 == 'm1':
+            n2 = int(n1)
+            n1 = m1
+        if n2 == 'm2':
+            n2 = int(n1)
+            n1 = m2
+
+    for i in range(n):
+        matriz_escalar.append([])
+        for j in range(n):
+            escalar = n1[i][j] * n2
+            matriz_escalar[i].append(escalar)
+
+    if recebe == 'm1':
+        m1 = matriz_escalar
+        return m1
+    else:
+        m2 = matriz_escalar
+        return m2
+
+for i in range(n):
+    m1.append(list(map(int, input().split())))
+for i in range(n):
+    m2.append(list(map(int, input().split())))
+
+qtd_op = int(input())
+
+for i in range(qtd_op):
+    operacao = input()
+    split_operacao = operacao.split(" = ")
+    split_operacao2 = split_operacao[1].split()
+    recebe = split_operacao[0]
+    n1 = split_operacao2[0]
+    n2 = split_operacao2[2]
+
+    if split_operacao2[1] == '+':
+        final = soma(recebe, n1, n2, n)
+    elif split_operacao2[1] == '-':
+        final = sub(recebe, n1, n2, n)
+    elif split_operacao2[1] == '.':
+        final = produto(recebe, n1, n2, n)
+    else:
+        final = escalar(recebe, n1, n2, n)
+
+for i in range(n):
+  for j in range(n):
+    if(j == n - 1):
+        print("%d" %final[i][j])
+    else:
+        print("%d" %final[i][j], end = " ")

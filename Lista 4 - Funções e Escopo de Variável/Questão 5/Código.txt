@@ -1,0 +1,62 @@
+valor = 10
+tempo = 120
+trabalhando = 1
+
+def pedras():
+    global valor, tempo
+    valor += int((valor + 120 - tempo)/2)
+    tempo -= 20
+    print(f'Voce concluiu o servico de Pedras Quentes e agora possui {valor} gorjetas.')
+
+def pes():
+    global valor, tempo
+    if valor % 2 == 0:
+        valor += int((valor % 7) * 6)
+    else:
+        valor += int((valor % 7) ** 2)
+    tempo -= 30
+    print(f'Voce concluiu o servico de Massagem nos Pes e agora possui {valor} gorjetas.')
+
+def refeicao():
+    global valor, tempo
+    parou = 0
+    if valor % 10 == 0:
+        valor += 5
+    else:
+        while not parou:
+            if valor % 10 == 0:
+                parou = 1
+            else:
+                valor += 1
+    tempo -= 15
+    print(f'Voce concluiu o servico de Servir Refeicao e agora possui {valor} gorjetas.')
+
+def completa():
+    global valor, tempo
+    lista_gorjeta = list(str(valor))
+    valor += int(lista_gorjeta[0]) + int(lista_gorjeta[1])
+    tempo -= 50
+    print(f'Voce concluiu o servico de Massagem Completa e agora possui {valor} gorjetas.')
+
+while trabalhando:
+    if valor >= 50:
+        print(f'Você acumulou {valor} gorjetas, com essa quantidade voce conseguira '
+              f'comprar sua passagem de saida e salvar seus pais.')
+        trabalhando = 0
+    elif tempo <= 0:
+        print('Voce nao conseguiu o minimo necessario para comprar a passagem de saida desse mundo e salvar seus pais.')
+        trabalhando = 0
+    else:
+        servico = input()
+
+        if servico == 'pedras':
+            pedras()
+        elif servico == 'pes':
+            pes()
+        elif servico == 'refeicao':
+            refeicao()
+        elif servico == 'completa':
+            completa()
+        else:
+            print(f'O cliente fez voce perder tempo, voce ainda possui {valor} gorjetas.')
+            tempo -= 5

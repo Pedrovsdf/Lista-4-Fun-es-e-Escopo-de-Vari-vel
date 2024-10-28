@@ -1,0 +1,43 @@
+Chihiro após muita luta foi promovida e ficou encarregada da contabilidade do hotel. Em um lugar complicado como o que ela se encontrava, as ferramentas que tinha a sua disposição eram limitadas e diferentes das que ela conhecia. A calculadora que ela podia usar fazia apenas 4 operações (adição, subtração, multiplicação e divisão), além disso ela apresentava um comportamento peculiar: era possível usar apenas uma operação de cada vez. O funcionamento de cada operação seguirá o seguinte modelo
+
+Adição: O 1° número é somado ao 2°, o resultado é somado ao 3° e assim por diante (não há um limite de números)
+
+Subtração: Do 1° número é subtraído o 2°, desse resultado é subtraído o 3° e assim por diante (não há um limite de números)
+
+Multiplicação: O 1° número é multiplicado pelo 2°, o resultado é multiplicado pelo 3° e assim por diante (não há um limite de números)
+
+Divisão: O 1° número é dividido pelo 2°, o resultado é dividido pelo 3° e assim por diante (não há um limite de números)
+
+Input
+
+Você receberá uma string m que determinará qual operação deve ser realizada, em seguida receberá um inteiro x que vai indicar com quantos números a operação será realizada, depois seguem-se x linhas com os valores que devem ser utilizados.
+
+Por fim, você receberá um valor para determinar se haverá uma nova operação ou não, se o valor for diferente de 1, significa que o programa chegou ao fim.
+
+A string m para indicar a operação segue o padrão abaixo:
+
+Para a soma: S
+
+Para a subtração: sub
+
+Para multiplicação: M
+
+Para a divisão: D
+
+Exemplo:
+
+D -> definindo que a operação será divisão
+
+3 -> quantidade de números que serão operados
+
+1 } -> operandos
+
+2 } -> operandos
+
+3 } -> operandos
+
+0 -> Indicador que não haverá outra operação
+
+Output
+
+Ao fim de cada operação você deve printar o resultado final

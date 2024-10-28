@@ -1,0 +1,36 @@
+Você conseguiu! Os esforços da equipe de pesquisa do Vale do Vento junto com a princesa Nausicaä conseguiram desenvolver um tradutor de fala das criaturas do Mar Podre! Com o ambicioso objetivo de prever o próximo movimento dos gigantes e incontáveis Ohmu antes que destruam qualquer país que os provoque, você começa a realizar os testes.
+
+
+
+Porém, você nota que nem todas as transmissões são dos grandes insetos do Mar Podre, mas sim conversas de rádio entre aeronaves de outros países! Aproveitando essa oportunidade, você começa a escrever um código que irá identificar quais sinais captados são das criaturas, e quais são de países com o potencial de atacar o pacífico Vale do Vento, ou o próprio Mar Podre, e para isso, a princesa Nausicaä lhe fala sobre alguns padrões de conversas para ajudá-lo:
+
+Normalmente, os insetos produzem os seguintes sons no meio de suas falas: “crcrcrcrcr”, “uuuuuuuoooooo”, “ooooooeeeeeeee”
+Aeronaves estrangeiras têm motores muito barulhentos, então sons como “ppprrrrrooon”, “tutututututututu”, “eeeeeeeeoooooo”, acabam aparecendo em suas transmissões de rádio
+A partir dessas dicas, você deve rapidamente montar uma função (ou mais), que identifique de quem você está recebendo os sinais, e a partir de seus resultados, retorne uma sugestão de como proceder.
+
+Input
+
+As primeiras n entradas (n > 0) serão as transmissões que você interceptará ao longo do tempo; elas poderão vir do Mar Podre ou dos aviões estrangeiros, ambos podendo ser potenciais ameaças ao pacífico Vale do Vento. A última entrada será uma entrada que não apresentou barulhos que você consegue identificar.
+
+entrada_1
+
+entrada_2
+
+entrada_3
+
+….
+
+entrada_n
+
+Output
+
+Para cada entrada, você irá dizer, a partir das informações dadas, se as transmissões são das criaturas do Mar Podre, de aeronaves de outros países, ou se ambos os sinais estão se misturando, e para cada entrada, o código deverá apresentar as seguintes respostas:
+
+Se apenas padrões das criaturas forem captados:
+“É apenas o Mar Podre se comunicando, podemos ficar tranquilos, por enquanto…”
+Se apenas padrões dos aviões forem captados:
+“São sinais de aeronaves estrangeiras! Devemos preparar nossas defesas??”
+Se ambos padrões forem captados em uma única transmissão:
+“A transmissão sugere que tropas estrangeiras e as criaturas do Mar Podre irão se confrontar! Precisamos impedi-los antes que mais mortes desnecessárias ocorram!”
+Quando nenhum padrão for captado, o código deverá printar essa mensagem e se encerrar:
+“Não é possível determinar a origem da transmissão… Isso deverá levar mais algum tempo.”

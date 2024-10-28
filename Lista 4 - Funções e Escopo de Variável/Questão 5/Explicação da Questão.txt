@@ -1,0 +1,64 @@
+Chihiro e seus pais são obrigados a se mudarem para outra cidade. Durante a mudança seu pai, decide tomar um atalho para economizar tempo, porém, acabam se perdendo e chegando em um edifício com um estranho túnel no centro.
+
+Quando começa a anoitecer um misterioso jovem chamado Haku aparece e ordena que Chihiro saia do lugar antes que anoiteça completamente.
+
+Chihiro corre em busca dos pais, enquanto pouco a pouco a cidade vai ganhando vida: os postes acendem e aparecem uma variedade de espíritos. Ao chegar ao restaurante, Chihiro descobre que seus pais se tornaram enormes porcos.
+
+capa-chihiro
+
+Haku leva-a, secretamente, a uma casa de banhos termais em que deve aceitar um trabalho antes que possa ajudá-la a escapar. Haku, deu 10$ para ajudar Chihiro na sua jornada.
+
+Ela tentará acumular um valor maior que 50$ em até 2 horas (duração do expediente), e comprar sua passagem de saída e salvar seus pais.
+
+Chihiro, na casa de banhos termais, fará serviços que lhe darão gorjetas.
+
+OBS: Caso Chihiro inicie um serviço antes do tempo acabar, ela deve completar esse serviço mesmo que ele passe do tempo máximo.
+
+Esses serviços serão:
+
+Pedras Quentes
+Nesse serviço, as gorjetas serão dadas pela média entre o tempo já decorrido em minutos e a quantidade de gorjetas que Chihiro tem no momento. A duração é de 20 minutos.
+
+OBS: O valor tem que ser inteiro, use cast se preciso.
+
+Massagem nos Pes
+Nesse serviço, as gorjetas serão dadas de duas formas e com duração de 30 minutos:
+
+Se a quantidade atual de gorjetas for par: → (gorjetas_totais % 7) x 6
+
+Se a quantidade atual de gorjetas for ímpar: → (gorjetas_totais % 7)²
+
+Servir Refeicao
+Nesse serviço, as gorjetas serão dadas da seguinte maneira: Será adicionado 1 ao total de gorjetas até que a sua quantidade de gorjetas seja um múltiplo de 10. Se a quantidade inicial for um múltiplo de 10, você ganhará 5 moedas. Duração de 15 minutos
+
+Massagem Completa
+Nesse serviço, as gorjetas serão dadas pela soma de cada unidade das gorjetas atuais, por exemplo: Se a quantidade de gorjetas forem 15$, será recebido 1 + 5 = 6$. Com duração de 50 minutos.
+
+Caso houver um chamado de um cliente para um serviço que não está descrito, Chihiro perderá 5 minutos do seus expediente.
+Input
+
+A entrada será composta de palavras, uma por linha, que podem ou não ser serviços que serão prestados por Chihiro. Você deve receber entradas até a quantidade das gorjetas for maior ou igual a 50 OU até o tempo do expediente terminar. Ela será da seguinte forma:
+
+entrada_1 entrada_2 . . . entrada_k
+
+Atenção: As entradas 'pedras', 'pes', 'refeicao', 'completa' representam, respectivamente, os serviços de Pedras Quentes, Massagem nos Pes, Servir Refeicao e Massagem Completa.
+
+Output
+
+Todas as vezes que Chihiro completar um serviço, as seguinte saída deve ser impressa:
+
+“Voce concluiu o servico de {nome_serviço} e agora possui {total_gorjetas} gorjetas.”
+
+Caso a palavra não seja referente a um dos serviços, seu código deve imprimir:
+
+"O cliente fez voce perder tempo, voce ainda possui {total_gorjetas} gorjetas."
+
+Quando o expediente de Chihiro terminar OU ela atingir a quantidade de gorjetas necessária, deve ser impressa na tela uma das duas seguintes saídas.
+
+Caso a quantidade de gorjetas de Chihiro for maior ou igual que 50:
+
+"Você acumulou {total_gorjetas} gorjetas, com essa quantidade voce conseguira comprar sua passagem de saida e salvar seus pais.”
+
+Caso a quantidade de gorjetas de Chihiro for menor que 50:
+
+"Voce nao conseguiu o minimo necessario para comprar a passagem de saida desse mundo e salvar seus pais.”

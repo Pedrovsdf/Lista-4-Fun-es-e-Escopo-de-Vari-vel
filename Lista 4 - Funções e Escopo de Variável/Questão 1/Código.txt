@@ -1,0 +1,60 @@
+loop = 1
+lista = []
+
+def soma(list):
+    somando = 0
+    for i in list:
+        somando += i
+    return somando
+
+def sub(list):
+    subtraindo = list[0]
+    primeira_vez = 1
+    for i in list:
+        if primeira_vez:
+            primeira_vez = 0
+        else:
+            subtraindo -= i
+    return subtraindo
+
+def multi(list):
+    multiplicando = 1
+    for i in list:
+        multiplicando *= i
+    return multiplicando
+
+def div(list):
+    dividindo = list[0]
+    primeira_vez = 1
+    for i in list:
+        if primeira_vez:
+            primeira_vez = 0
+        else:
+            dividindo /= i
+    return dividindo
+
+while loop:
+    operacao = input()
+    qtd_numeros = int(input())
+    for i in range(qtd_numeros):
+        valor = int(input())
+        lista.append(valor)
+
+    if operacao == 'S':
+        res_soma = soma(lista)
+        print(res_soma)
+    elif operacao == 'sub':
+        res_sub = sub(lista)
+        print(res_sub)
+    elif operacao == 'M':
+        res_multi = multi(lista)
+        print(res_multi)
+    elif operacao == 'D':
+        res_div = div(lista)
+        print(res_div)
+
+    lista.clear()
+
+    parar = input()
+    if parar != '1':
+        loop = 0

@@ -1,0 +1,109 @@
+shi = 0
+chi = 0
+ko = 0
+ku = 0
+ya = 0
+ma = 0
+parou = 0
+
+def separar_silabas(palavra):
+    silabas = set("AEIOUaeiou")
+    palavra_final = list(palavra)
+    cont = 1
+
+    for letras in range(len(palavra) - 1):
+        if palavra[letras] in silabas:
+            palavra_final.insert(cont, '/')
+            cont += 1
+            # palavra_final = palavra[:letras+1] + '/' + palavra[letras:]
+        cont += 1
+
+    palavra_final = ''.join(palavra_final)
+    palavra_final = palavra_final.split('/')
+    checar_palavra(palavra_final, palavra)
+
+def checar_palavra(palavra_final, palavra):
+    mensagem = ''
+    checar_final = ''.join(palavra_final)
+    igual = 0
+    cont = 0
+    global shi, chi, ko, ku, ya, ma
+    
+    if palavra == 'shichi' or \
+        palavra == 'chiko' or \
+        palavra == 'koku' or \
+        palavra == 'kuya' or \
+        palavra == 'yama' or \
+        palavra == 'shichiko' or \
+        palavra == 'shichikoku' or \
+        palavra == 'shichikokuya' or \
+        palavra == 'shichikokuyama' or \
+        palavra == 'chikoku' or \
+        palavra == 'chikokuya' or \
+        palavra == 'chikokuyama' or \
+        palavra == 'kokuya' or \
+        palavra == 'kokuyama' or \
+        palavra == 'kuyama':
+        for i in palavra_final:
+          if i == 'shi' and shi == 0:
+            cont += 1
+          elif i == 'chi' and chi == 0:
+            cont += 1
+          elif i == 'ko' and ko == 0:
+            cont += 1
+          elif i == 'ku' and ku == 0:
+            cont += 1
+          elif i == 'ya' and ya == 0:
+            cont += 1
+          elif i == 'ma' and ma == 0:
+            cont += 1
+        if cont == len(palavra_final):
+            print(f'A palavra {palavra} está toda no nome do hospital. Acertou em cheio, Totoro!')
+            igual = 1
+            
+    for i in palavra_final:
+        if i == 'shi' and shi != 1:
+            shi = 1
+            mensagem += 'shi '
+        elif i == 'chi' and chi != 1:
+            chi = 1
+            mensagem += 'chi '
+        elif i == 'ko' and ko != 1:
+            ko = 1
+            mensagem += 'ko '
+        elif i == 'ku' and ku != 1:
+            ku = 1
+            mensagem += 'ku '
+        elif i == 'ya' and ya != 1:
+            ya = 1
+            mensagem += 'ya '
+        elif i == 'ma' and ma != 1:
+            ma = 1
+            mensagem += 'ma '
+    if igual:
+      pass
+    else:
+      mensagem = mensagem.split()
+      mensagem_join = ', '.join(mensagem)
+  
+      if len(mensagem) == 1:
+          print(f'Lembrei! A sílaba {mensagem[0]} está no nome do hospital. Obrigada, Totoro!')
+      elif len(mensagem) > 1:
+          print(f'Lembrei! As sílabas: {mensagem_join} estão no nome do hospital. Obrigada, Totoro!')
+      else:
+          print('Infelizmente nenhuma dessas sílabas me lembrou do nome do hospital, Totoro.')
+
+
+while not parou:
+    if shi == 1 and \
+        chi == 1 and \
+        ko == 1 and \
+        ku == 1 and \
+        ya == 1 and \
+            ma == 1:
+        parou = 1
+    else:
+      palavra = input()
+      separar_silabas(palavra)
+
+print('Conseguimos lembrar o nome do hospital shichikokuyama, agora é só pegar o Catbus e ir até lá!')

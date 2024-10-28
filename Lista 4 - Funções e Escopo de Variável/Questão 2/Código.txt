@@ -1,0 +1,30 @@
+def tradutor(mensagem2):
+    inseto = 0
+    aeronave = 0
+    for i in mensagem2:
+        if i == 'crcrcrcrcr' or \
+                i == 'uuuuuuuoooooo' or \
+                i == 'ooooooeeeeeeee':
+            inseto = 1
+        elif i == 'ppprrrrrooon' or \
+                i == 'tutututututututu' or \
+                i == 'eeeeeeeeoooooo':
+            aeronave = 1
+    if inseto == 1 and aeronave == 1:
+        print('A transmissão sugere que tropas estrangeiras e as '
+              'criaturas do Mar Podre irão se confrontar! Precisamos impedi-los '
+              'antes que mais mortes desnecessárias ocorram!')
+    elif inseto == 1 and aeronave == 0:
+        print('É apenas o Mar Podre se comunicando, podemos ficar tranquilos, por enquanto…')
+    elif inseto == 0 and aeronave == 1:
+        print('São sinais de aeronaves estrangeiras! Devemos preparar nossas defesas??')
+    else:
+        print('Não é possível determinar a origem da transmissão… Isso deverá levar mais algum tempo.')
+        global parou
+        parou = 1
+
+parou = 0
+while not parou:
+    mensagem = input()
+    lista_mensagem = mensagem.split()
+    tradutor(lista_mensagem)

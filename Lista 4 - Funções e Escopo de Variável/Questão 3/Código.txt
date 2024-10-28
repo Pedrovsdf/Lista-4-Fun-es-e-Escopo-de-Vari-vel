@@ -1,0 +1,29 @@
+#A 65 - 90/ a 97 - 122
+def decifrar(lista_codigo):
+    global mensagem
+    for i in lista_codigo:
+        if int(i) >= 0 and int(i) <= 25:
+            mensagem += chr((int(i) + 97))
+        elif int(i) >= 26 and int(i) <= 49:
+            mensagem += chr((int(i) + 71))
+        elif int(i) >= 50 and int(i) <= 75:
+            mensagem += chr((int(i) + 15))
+        elif int(i) >= 76 and int(i) <= 99:
+            mensagem += chr((int(i) - 11))
+        elif int(i) == 100:
+            mensagem += ' '
+        else:
+            global errado
+            errado = 1
+            break
+
+codigo = input()
+lista_codigo = codigo.split()
+mensagem = ''
+errado = 0
+decifrar(lista_codigo)
+
+if errado:
+    print('Infelizmente os números nao dizem nada')
+else:
+    print(mensagem)
